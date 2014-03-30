@@ -17,20 +17,28 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+    % Save the cost J in every iteration    
+        J_history(iter) = computeCost(X, y, theta);
 
+        n = size(X, 2);
+        %derivativeJ = zeros(n, 1);
+        %for j = 1 : n
+                %s = 0;
+                %for i = 1 : m
+	        %        h = theta' * X(i, :)';
+                %        s = s + (h - y(i)) * X(i, j);
+                %endfor
+                %derivativeJ(j) = s;
+        %        h = theta' * X';
+        %        derivativeJ(j) = (h' - y)' * X(:,j);
+        %endfor
+        h = theta' * X';
+        derivativeJ = (h' - y)' * X;
 
-
-
-
-
-
-
-
+	theta = theta - (alpha / m * derivativeJ');
 
     % ============================================================
 
-    % Save the cost J in every iteration    
-    J_history(iter) = computeCostMulti(X, y, theta);
 
 end
 
