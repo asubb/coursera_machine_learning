@@ -16,11 +16,11 @@ J = 0;
 % foreach
 s = 0;
 for i = 1 : m
-	h = theta' * (X(i,:))';
+	h = theta' * X(i,:)';
 	s = s + (h - y(i)) ^ 2;
 endfor
 
-J = 1 / (2*m) * s;
+J = 1 / (2 * m) * s;
 
 
 
