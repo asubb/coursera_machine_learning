@@ -13,8 +13,8 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
-
+s = (X * theta - y); % m x 1 matrix
+J = 1 / (2 * m) * s' * s;
 
 
 % =========================================================================
