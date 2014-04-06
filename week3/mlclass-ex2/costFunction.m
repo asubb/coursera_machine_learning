@@ -20,11 +20,14 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% J=
+
+n = size(theta, 1);
+J = 1 / m * (-y' * log (sigmoid(theta' * X'))' - (1 .- y)' * log(1 .- sigmoid(theta' * X'))');
 
 
-
-
-
+% derivative
+grad = (1 / m * (sigmoid(theta' * X') - y') * X)';
 
 
 % =============================================================
